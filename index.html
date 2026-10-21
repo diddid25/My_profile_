@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="양원정의 스포츠 분야 프로필, 경험, 자격 및 진로 관심">
+  <title>양원정 | Sports & Technology</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --white: #ffffff;
+      --text: #191a18;
+      --muted: #666b65;
+      --line: #e0e1dc;
+      --accent: #b8f477;
+      --nav-height: 72px;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 20px);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans KR", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* 상단 고정 메뉴 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 1000;
+      background: rgba(247, 247, 245, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-menu a {
+      font-size: 12px;
+      font-weight: 650;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--text);
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    main {
+      padding-top: var(--nav-height);
+    }
+
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: calc(var(--nav-height) + 12px);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 84px);
+      line-height: 1.05;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 19px;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 42px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* 메인 프로필 */
+    #home {
+      padding: 65px 0 90px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 750;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #75b63c;
+    }
+
+    .hero h1 span {
+      color: #858981;
+    }
+
+    .hero-description {
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
+      color: #484d46;
+      margin-bottom: 25px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 50px;
+      padding: 6px 13px;
+      font-size: 12px;
+      color: #4d524b;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--text);
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-dark {
+      background: var(--text);
+      color: white;
+      margin-right: 7px;
+    }
+
+    .portrait-wrapper {
+      position: relative;
+      max-width: 370px;
+      width: 100%;
+      justify-self: end;
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 180px 180px 22px 22px;
+      background: #e6e3dd;
+    }
+
+    .portrait-caption {
+      position: absolute;
+      bottom: 22px;
+      left: -25px;
+      background: white;
+      padding: 16px 19px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      font-size: 12px;
+    }
+
+    .portrait-caption strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .portrait-caption span {
+      color: var(--muted);
+    }
+
+    /* 공통 카드 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 27px;
+    }
+
+    .card-number {
+      font-size: 11px;
+      font-weight: 800;
+      color: #92978e;
+      letter-spacing: 0.1em;
+    }
+
+    .card h3 {
+      margin-top: 23px;
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .highlight {
+      margin-top: 17px;
+      padding: 25px;
+      background: #eaf6dc;
+      border-radius: 20px;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .highlight p {
+      font-size: 13px;
+      color: #4d5944;
+    }
+
+    /* 경험 및 활동 */
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .period {
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--muted);
+    }
+
+    .experience h3 {
+      margin-bottom: 5px;
+    }
+
+    .experience .role {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .experience p {
+      font-size: 14px;
+      max-width: 750px;
+    }
+
+    /* 자격증 */
+    .credential-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .credential-panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .credential-list {
+      list-style: none;
+    }
+
+    .credential-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid #ededeb;
+      font-size: 13px;
+    }
+
+    .credential-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pending {
+      color: #52772e;
+      font-size: 11px;
+      font-weight: 750;
+      text-align: right;
+    }
+
+    /* 강점 및 지도 철학 */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .strength-panel {
+      background: #191b18;
+      color: white;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .strength-panel h3 {
+      font-size: 29px;
+      line-height: 1.4;
+      margin: 35px 0 15px;
+    }
+
+    .strength-panel p {
+      color: #c6c9c1;
+      font-size: 14px;
+    }
+
+    .strength-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .strength-tags span {
+      border: 1px solid #555a50;
+      border-radius: 30px;
+      padding: 5px 10px;
+      font-size: 11px;
+      color: #f0f2ec;
+    }
+
+    .philosophy {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .philosophy blockquote {
+      font-size: clamp(21px, 2.5vw, 27px);
+      font-weight: 750;
+      line-height: 1.55;
+      letter-spacing: -0.05em;
+      margin: 24px 0;
+    }
+
+    .philosophy p {
+      font-size: 14px;
+    }
+
+    /* 진로 및 목표 */
+    .career-grid,
+    .goal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .career-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .career-card p,
+    .goal-card p {
+      font-size: 13px;
+    }
+
+    .goal-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .goal-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-top: 2px solid var(--text);
+      padding: 25px;
+    }
+
+    .goal-label {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .goal-card h3 {
+      margin-top: 20px;
+    }
+
+    /* 연락처 */
+    #contact {
+      background: #eaf6dc;
+      border-bottom: none;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-layout p {
+      font-size: 14px;
+      color: #4d5944;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 20px;
+      border: 1px solid rgba(30, 50, 20, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 14px;
+      font-weight: 750;
+      transition: background 0.2s;
+    }
+
+    .contact-link:hover {
+      background: white;
+    }
+
+    .contact-link span {
+      font-size: 12px;
+      font-weight: 500;
+      color: #58664d;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 24px 0;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* 태블릿 */
+    @media (max-width: 1000px) {
+      .nav-menu {
+        gap: 12px;
+      }
+
+      .nav-menu a {
+        font-size: 11px;
+      }
+
+      .hero {
+        gap: 40px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    /* 모바일 */
+    @media (max-width: 760px) {
+      :root {
+        --nav-height: 66px;
+      }
+
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        padding: 12px 18px 20px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 12px;
+      }
+
+      .nav-menu.open {
+        display: grid;
+      }
+
+      .nav-menu a {
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      #home {
+        padding: 45px 0 70px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(55px, 13vw, 76px);
+      }
+
+      .portrait-wrapper {
+        justify-self: center;
+        max-width: 330px;
+      }
+
+      .portrait-caption {
+        left: -8px;
+      }
+
+      .card-grid,
+      .credential-grid,
+      .strength-grid,
+      .career-grid,
+      .goal-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .experience {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 24px 0;
+      }
+
+      .strength-panel {
+        padding: 28px;
+      }
+
+      .contact-layout {
+        gap: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">YANG WON JEONG</a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >☰</button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="주요 메뉴">
+        <a href="#about">소개</a>
+        <a href="#interests">관심 분야</a>
+        <a href="#experience">경험 및 활동</a>
+        <a href="#credentials">자격 및 성과</a>
+        <a href="#strengths">강점과 철학</a>
+        <a href="#career">관심 진로</a>
+        <a href="#goals">목표</a>
+        <a href="#contact">연락처</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 메인 프로필 -->
+    <section id="home">
+      <div class="container hero">
+        <div>
+          <div class="hero-label">
+            <span class="dot"></span>
+            SPORTS &amp; TECHNOLOGY · PROFILE
+          </div>
+
+          <h1>양원정<span>.</span></h1>
+
+          <p class="hero-description">
+            스포츠의 가치를 전하고,<br>
+            사람의 가능성을 키우는 사람
+          </p>
+
+          <div class="tags">
+            <span class="tag">서경대학교</span>
+            <span class="tag">스포츠앤테크놀로지학과</span>
+            <span class="tag">3학년</span>
+          </div>
+
+          <a class="button button-dark" href="#experience">
+            경험 및 활동 보기 ↘
+          </a>
+          <a class="button" href="#contact">연락하기 ↗</a>
+        </div>
+
+        <div class="portrait-wrapper">
+          <img
+            class="portrait"
+            src="프로필.jpg"
+            alt="양원정 프로필 사진"
+            onerror="this.alt='프로필.jpg 파일을 같은 폴더에 넣어주세요.'"
+          >
+          <div class="portrait-caption">
+            <strong>Fitness · Sports Rehabilitation</strong>
+            <span>관심 분야와 경험을 바탕으로 성장 중</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기본 소개 -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">01 / ABOUT</div>
+            <h2>기본 소개</h2>
+          </div>
+          <p>
+            서경대학교 스포츠앤테크놀로지학과 3학년으로,
+            스포츠의 가치를 전하고 사람의 가능성을 키우는 것을 지향합니다.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-number">PROFILE 01</div>
+            <h3>학력</h3>
+            <p>서경대학교<br>스포츠앤테크놀로지학과 · 3학년</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">PROFILE 02</div>
+            <h3>관심의 방향</h3>
+            <p>피트니스와 스포츠 재활을 중심으로 운동에 대한 이해를 넓혀가고 있습니다.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">PROFILE 03</div>
+            <h3>지향점</h3>
+            <p>운동을 긍정적으로 경험하고 꾸준히 실천할 수 있도록 돕는 지도자로 성장하고 싶습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 관심 분야 -->
+    <section id="interests">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / INTERESTS</div>
+            <h2>관심 분야</h2>
+          </div>
+          <p>
+            웨이트 트레이닝과 유도를 중심으로 운동에 대한 이해를 넓히고,
+            기능성 운동을 활용한 재활 트레이닝과 데이터 기반 변화 관찰에 관심이 있습니다.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-number">FIELD 01</div>
+            <h3>피트니스</h3>
+            <p>웨이트 트레이닝과 유도를 중심으로 운동에 대한 이해를 넓혀가고 있습니다.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">FIELD 02</div>
+            <h3>스포츠 재활</h3>
+            <p>기능성 운동을 활용한 재활 트레이닝에 관심이 있습니다.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">FIELD 03</div>
+            <h3>운동 데이터</h3>
+            <p>회원의 신체 상태 변화를 직관적으로 확인할 수 있는 데이터 활용 방법을 알아보고 싶습니다.</p>
+          </article>
+        </div>
+
+        <div class="highlight">
+          <strong>관심 있는 탐색 주제</strong>
+          <p>기능성 운동 기반 재활 트레이닝 · 회원의 신체 변화 추이 데이터 활용</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 경험 및 활동 -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">03 / EXPERIENCE</div>
+            <h2>경험 및 활동</h2>
+          </div>
+          <p>
+            매장 운영과 고객 응대, 주방 업무, 운동 지도 등 다양한 현장에서 경험을 쌓았습니다.
+            현재는 헬스장에서 회원을 직접 지도하며 실무 역량을 넓혀가고 있습니다.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="experience">
+            <div class="period">22살~현재</div>
+            <div>
+              <h3>본투윈 매장 근무</h3>
+              <div class="role">매장 관리 · 고객 응대</div>
+              <p>매장 단독 근무를 통해 카운터 운영, 고객 응대, 물류 정리 등 매장 관리 전반을 담당하고 있습니다.</p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="period">22살~현재</div>
+            <div>
+              <h3>열정짐 헬스장 근무</h3>
+              <div class="role">인포메이션 · 트레이닝 수업</div>
+              <p>인포메이션 업무를 담당했으며, 최근 첫 회원을 맡아 트레이닝 수업을 진행하고 있습니다. 첫 회원을 지도하면서 트레이너로서 한 단계 성장했다는 성취감을 느꼈습니다.</p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="period">21살~22살</div>
+            <div>
+              <h3>맘스터치 근무</h3>
+              <div class="role">매장 근무</div>
+              <p>매장 근무를 통해 고객 응대와 업무 수행 경험을 쌓았습니다.</p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="period">20살 · 7개월</div>
+            <div>
+              <h3>두찜 근무</h3>
+              <div class="role">음식점 근무</div>
+              <p>음식점 근무 경험을 쌓았습니다.</p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="period">20살 · 3개월</div>
+            <div>
+              <h3>체대입시학원 근무</h3>
+              <div class="role">운동 강사</div>
+              <p>학생들에게 운동을 가르치는 강사 역할을 맡았습니다.</p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="period">고등학교 3학년 · 3개월</div>
+            <div>
+              <h3>수레로 돈까스 근무</h3>
+              <div class="role">주방 조리</div>
+              <p>주방 조리 업무를 담당했습니다.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="highlight">
+          <strong>경험을 통해 배운 점</strong>
+          <p>
+            다양한 현장에서 사람을 대하는 방법과 인내심, 책임감을 배웠습니다.
+            학생들에게 운동을 가르친 경험을 통해 운동 지도에 대한 관심을 키웠으며,
+            현재는 회원을 직접 지도하며 실무 역량을 쌓아가고 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 자격증 및 성과 -->
+    <section id="credentials">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">04 / CREDENTIALS</div>
+            <h2>자격증 및 성과</h2>
+          </div>
+          <p>
+            취득한 자격 및 교육·활동 이력을 정리했습니다.
+            발급 예정인 자격은 상태를 구분해 표시했습니다.
+          </p>
+        </div>
+
+        <div class="credential-grid">
+          <div class="credential-panel">
+            <h3>자격증 및 자격 사항</h3>
+            <ul class="credential-list">
+              <li>
+                생활스포츠지도자자격증
+                <span class="pending">12월 4일 발급 예정</span>
+              </li>
+              <li>KSA 알파인 스키 심판 3급</li>
+              <li>골프데이터분석 Lv.1</li>
+              <li>체형관리사 1급</li>
+              <li>스포츠 마사지사 1급</li>
+              <li>스포츠테이핑 1급</li>
+              <li>유도 2단</li>
+            </ul>
+          </div>
+
+          <div class="credential-panel">
+            <h3>교육 및 활동 이력</h3>
+            <ul class="credential-list">
+              <li>전국 체육 지도자 학회 타임리스 3기</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 강점 및 지도 철학 -->
+    <section id="strengths">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">05 / STRENGTHS</div>
+            <h2>강점과 지도 철학</h2>
+          </div>
+          <p>
+            운동에 대한 꾸준함과 긍정적인 태도를 바탕으로 회원과 소통하고,
+            운동을 지속할 수 있도록 동기를 부여하는 지도자가 되고 싶습니다.
+          </p>
+        </div>
+
+        <div class="strength-grid">
+          <div class="strength-panel">
+            <div class="eyebrow">MY STRENGTHS</div>
+            <h3>꾸준한 자기관리,<br>긍정적인 소통</h3>
+            <p>다양한 현장 경험을 바탕으로 책임감과 대인관계 능력을 쌓아가고 있습니다.</p>
+
+            <div class="strength-tags">
+              <span>적극적인 자기관리</span>
+              <span>꾸준한 운동 습관</span>
+              <span>웨이트 트레이닝 이해</span>
+              <span>긍정적인 서비스 태도</span>
+              <span>책임감</span>
+            </div>
+          </div>
+
+          <div class="philosophy">
+            <div class="eyebrow">COACHING PHILOSOPHY</div>
+            <blockquote>
+              운동의 즐거움과 가치를 느끼며 꾸준히 실천할 수 있도록 돕고 싶습니다.
+            </blockquote>
+            <p>
+              운동에 대한 관심이 자연스럽게 생길 수 있도록 회원의 곁에서 동기를 부여하고,
+              운동을 긍정적으로 경험할 수 있도록 돕는 지도자가 되고 싶습니다.
+              단순히 운동 방법을 알려주는 것을 넘어 회원이 꾸준히 실천할 수 있도록 이끌고자 합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 관심 진로 -->
+    <section id="career">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">06 / CAREER</div>
+            <h2>관심 진로</h2>
+          </div>
+          <p>
+            웨이트 트레이닝에 대한 이해와 긍정적인 태도를 바탕으로 회원과 소통하며,
+            개인의 목표와 신체 상태에 맞는 운동을 지도하는 전문가로 성장하고 싶습니다.
+          </p>
+        </div>
+
+        <div class="career-grid">
+          <article class="career-card">
+            <h3>생활체육지도자</h3>
+            <p>운동에 대한 관심과 참여를 이끌고, 운동을 긍정적으로 경험할 수 있도록 돕는 역할에 관심이 있습니다.</p>
+          </article>
+
+          <article class="career-card">
+            <h3>퍼스널 트레이너</h3>
+            <p>회원과 소통하며 개인의 목표와 신체 상태에 맞는 운동을 지도하는 전문가로 성장하고 싶습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 앞으로의 목표 -->
+    <section id="goals">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">07 / GOALS</div>
+            <h2>앞으로의 목표</h2>
+          </div>
+          <p>
+            다양한 운동 분야를 배우고 실제 지도 경험을 쌓아,
+            자신감과 전문성을 갖춘 트레이너로 성장하고자 합니다.
+          </p>
+        </div>
+
+        <div class="goal-grid">
+          <article class="goal-card">
+            <div class="goal-label">LEARNING</div>
+            <h3>더 배우고 싶은 분야</h3>
+            <p>필라테스와 요가를 비롯해 골프 분야까지 경험을 넓히며 다양한 운동에 대한 이해를 높이고 싶습니다.</p>
+          </article>
+
+          <article class="goal-card">
+            <div class="goal-label">BEFORE GRADUATION</div>
+            <h3>졸업 전 목표</h3>
+            <p>첫 회원 지도 경험을 시작으로 다양한 실무 경험을 쌓으며, 자신감 있고 능숙하게 운동을 지도할 수 있는 역량을 기르고 싶습니다.</p>
+          </article>
+
+          <article class="goal-card">
+            <div class="goal-label">WITHIN ONE YEAR</div>
+            <h3>1년 안에 이루고 싶은 목표</h3>
+            <p>꾸준한 운동과 자기관리를 통해 회원에게 신뢰를 줄 수 있는 몸과 전문성을 갖추고 싶습니다. 또한 경제적인 목표를 이루기 위해 노력하며, 현장 경험을 바탕으로 성장하고자 합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연락처 -->
+    <section id="contact">
+      <div class="container contact-layout">
+        <div>
+          <div class="eyebrow">08 / CONTACT</div>
+          <h2>연락처</h2>
+          <p>인스타그램 또는 이메일을 통해 연락할 수 있습니다.</p>
+        </div>
+
+        <div class="contact-list">
+          <a
+            class="contact-link"
+            href="https://www.instagram.com/buoafuom/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+            <span>@buoafuom ↗</span>
+          </a>
+
+          <a class="contact-link" href="mailto:diddid25@skuniv.ac.kr">
+            Email
+            <span>diddid25@skuniv.ac.kr ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>양원정 · 스포츠앤테크놀로지학과</span>
+      <span>Sports &amp; Technology Profile</span>
+    </div>
+  </footer>
+
+  <script>
+    // 모바일 메뉴 열기 및 닫기
+    const menuButton = document.getElementById("menuButton");
+    const navMenu = document.getElementById("navMenu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "메뉴 닫기" : "메뉴 열기"
+      );
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    // 메뉴를 클릭하면 해당 섹션으로 이동
+    document.querySelectorAll(".nav-menu a, .logo").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "메뉴 열기");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    // 현재 화면에 표시되는 섹션의 메뉴 강조
+    const sections = document.querySelectorAll("main section[id]");
+    const navItems = document.querySelectorAll(".nav-menu a");
+
+    if ("IntersectionObserver" in window) {
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navItems.forEach(item => {
+              item.classList.toggle(
+                "active",
+                item.getAttribute("href") === "#" + entry.target.id
+              );
+            });
+          }
+        });
+      }, {
+        rootMargin: "-25% 0px -60% 0px"
+      });
+
+      sections.forEach(section => sectionObserver.observe(section));
+    }
+  </script>
+</body>
+</html>
